@@ -73,3 +73,5 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+gem "rails-i18n", "~> 7.0"
