@@ -1,9 +1,11 @@
 class TasksController < ApplicationController
+  include Exportable 
+
   before_action :set_task, only: %i[ edit update destroy ]
 
   # GET /tasks or /tasks.json
   def index
-    @tasks = Task.all
+    @tasks = Task.only_parents.order(:due_date)
   end
 
   # GET /tasks/new
